@@ -23,6 +23,7 @@ export function SummaryCards({ stats, loading, error, onRetry }) {
     return null;
   }
 
+<<<<<<< HEAD
   const formatCurrency = (amount, currency = 'PHP') => {
     const currencies = {
       USD: { symbol: '$', code: 'USD' },
@@ -50,6 +51,17 @@ export function SummaryCards({ stats, loading, error, onRetry }) {
 
   const netWorth = parseFloat(stats.totalIncome || 0) - parseFloat(stats.totalExpenses || 0);
   const savings = parseFloat(stats.netIncome || 0);
+=======
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD'
+    }).format(parseFloat(amount));
+  };
+
+  const netWorth = parseFloat(stats.totalIncome) - parseFloat(stats.totalExpenses);
+  const savings = parseFloat(stats.netIncome);
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
 
   const cards = [
     {

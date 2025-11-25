@@ -41,10 +41,17 @@ export function TransactionList({ categories, onDeleteTransaction }) {
 
   const formatAmount = (amount, type) => {
     const num = parseFloat(amount);
+<<<<<<< HEAD
     const formatted = `₱${num.toLocaleString('en-US', {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
     })}`;
+=======
+    const formatted = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD'
+    }).format(num);
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
     
     return type === 'expense' ? `-${formatted}` : `+${formatted}`;
   };
@@ -54,6 +61,10 @@ export function TransactionList({ categories, onDeleteTransaction }) {
   };
 
   const getCategoryBadgeColor = (categoryName) => {
+<<<<<<< HEAD
+=======
+    // Color mapping for different categories
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
     const colorMap = {
       'Food & Dining': 'bg-red-100 text-red-800 border-red-200',
       'Transportation': 'bg-blue-100 text-blue-800 border-blue-200',

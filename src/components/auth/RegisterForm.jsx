@@ -5,10 +5,17 @@ import { Label } from '../ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 import { Alert, AlertDescription } from '../ui/alert';
 import { Separator } from '../ui/separator';
+<<<<<<< HEAD
 import { Loader2, Check, X } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import { GoogleSignInButton } from './GoogleSignInButton';
 import { toast } from "sonner";
+=======
+import { Loader2, Eye, EyeOff, Check, X } from 'lucide-react';
+import { useAuth } from '../../contexts/AuthContext';
+import { GoogleSignInButton } from './GoogleSignInButton';
+import { toast } from "sonner@2.0.3";
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
 
 export const RegisterForm = ({ onSwitchToLogin }) => {
   const [formData, setFormData] = useState({
@@ -19,6 +26,11 @@ export const RegisterForm = ({ onSwitchToLogin }) => {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+<<<<<<< HEAD
+=======
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
 
   const { register } = useAuth();
 
@@ -119,6 +131,7 @@ export const RegisterForm = ({ onSwitchToLogin }) => {
 
           <div className="space-y-2">
             <Label htmlFor="password">Password</Label>
+<<<<<<< HEAD
             <Input
               id="password"
               name="password"
@@ -128,6 +141,28 @@ export const RegisterForm = ({ onSwitchToLogin }) => {
               onChange={handleChange}
               required
             />
+=======
+            <div className="relative">
+              <Input
+                id="password"
+                name="password"
+                type={showPassword ? "text" : "password"}
+                placeholder="Create a password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 h-8 w-8"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+              </Button>
+            </div>
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
             
             {formData.password && (
               <div className="mt-2 p-3 bg-muted rounded-md space-y-1">
@@ -142,6 +177,7 @@ export const RegisterForm = ({ onSwitchToLogin }) => {
 
           <div className="space-y-2">
             <Label htmlFor="password_confirmation">Confirm Password</Label>
+<<<<<<< HEAD
             <Input
               id="password_confirmation"
               name="password_confirmation"
@@ -151,6 +187,28 @@ export const RegisterForm = ({ onSwitchToLogin }) => {
               onChange={handleChange}
               required
             />
+=======
+            <div className="relative">
+              <Input
+                id="password_confirmation"
+                name="password_confirmation"
+                type={showConfirmPassword ? "text" : "password"}
+                placeholder="Confirm your password"
+                value={formData.password_confirmation}
+                onChange={handleChange}
+                required
+              />
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 h-8 w-8"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              >
+                {showConfirmPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+              </Button>
+            </div>
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
             
             {formData.password_confirmation && (
               <div className={`flex items-center gap-2 text-sm mt-1 ${passwordsMatch ? 'text-green-600' : 'text-destructive'}`}>

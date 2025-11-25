@@ -421,6 +421,7 @@ function AppContent() {
             />
 
             {/* Tabs */}
+<<<<<<< HEAD
            <Tabs defaultValue="overview" className="space-y-6">
  <div className="flex justify-start">
   <TabsList className="flex items-center gap-6 bg-muted rounded-full px-6 py-1">
@@ -455,6 +456,16 @@ function AppContent() {
 
     </TabsList>
   </div>
+=======
+            <Tabs defaultValue="overview" className="space-y-6">
+              <TabsList className="grid grid-cols-5 w-full max-w-lg">
+                <TabsTrigger value="overview">Overview</TabsTrigger>
+                <TabsTrigger value="transactions">Transactions</TabsTrigger>
+                <TabsTrigger value="budget">Budget</TabsTrigger>
+                <TabsTrigger value="goals">Goals</TabsTrigger>
+                <TabsTrigger value="analytics">Analytics</TabsTrigger>
+              </TabsList>
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
 
               <TabsContent value="overview" className="space-y-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -505,6 +516,13 @@ function AppContent() {
               <TabsContent value="goals" className="space-y-6">
                 <FinancialGoals />
               </TabsContent>
+<<<<<<< HEAD
+=======
+
+              <TabsContent value="analytics" className="space-y-6">
+                <SpendingChart categories={categories || []} />
+              </TabsContent>
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
             </Tabs>
           </div>
         </main>

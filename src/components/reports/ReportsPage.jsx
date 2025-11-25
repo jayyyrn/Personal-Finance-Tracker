@@ -62,9 +62,15 @@ const generatePDFReport = async (reportData, dateRange) => {
       
       doc.setFontSize(10);
       const summaryData = [
+<<<<<<< HEAD
         ['Total Income', `₱${totals.income.toLocaleString()}`, [16, 185, 129]], // Green
         ['Total Expenses', `₱${totals.expenses.toLocaleString()}`, [239, 68, 68]], // Red
         ['Net Balance', `₱${totals.netBalance.toLocaleString()}`, [59, 130, 246]], // Blue
+=======
+        ['Total Income', `$${totals.income.toLocaleString()}`, [16, 185, 129]], // Green
+        ['Total Expenses', `$${totals.expenses.toLocaleString()}`, [239, 68, 68]], // Red
+        ['Net Balance', `$${totals.netBalance.toLocaleString()}`, [59, 130, 246]], // Blue
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
         ['Total Transactions', totals.transactionCount.toString(), [100, 100, 100]] // Gray
       ];
       
@@ -120,7 +126,11 @@ const generatePDFReport = async (reportData, dateRange) => {
         }
         
         doc.text(item.category.substring(0, 20), 22, yPosition); // Limit category name length
+<<<<<<< HEAD
         doc.text(`₱${item.amount.toFixed(2)}`, 100, yPosition);
+=======
+        doc.text(`$${item.amount.toFixed(2)}`, 100, yPosition);
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
         doc.text(`${item.percentage.toFixed(1)}%`, 140, yPosition);
         yPosition += 8;
       });
@@ -175,7 +185,11 @@ const generatePDFReport = async (reportData, dateRange) => {
         const categoryName = getCategoryName(budget);
         
         doc.text(categoryName.substring(0, 20), 22, yPosition);
+<<<<<<< HEAD
         doc.text(`₱${spent.toFixed(2)} / ₱${limit.toFixed(2)}`, 80, yPosition);
+=======
+        doc.text(`$${spent.toFixed(2)} / $${limit.toFixed(2)}`, 80, yPosition);
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
         doc.text(`${percentage.toFixed(1)}%`, 120, yPosition);
         
         // Color code status
@@ -250,10 +264,17 @@ const generatePDFReport = async (reportData, dateRange) => {
         // Color code amount based on type
         if (transaction.type === 'income') {
           doc.setTextColor(16, 185, 129); // Green
+<<<<<<< HEAD
           doc.text(`+₱${amount}`, 160, yPosition);
         } else {
           doc.setTextColor(239, 68, 68); // Red
           doc.text(`-₱${amount}`, 160, yPosition);
+=======
+          doc.text(`+$${amount}`, 160, yPosition);
+        } else {
+          doc.setTextColor(239, 68, 68); // Red
+          doc.text(`-$${amount}`, 160, yPosition);
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
         }
         doc.setTextColor(0, 0, 0);
         
@@ -311,9 +332,15 @@ const generateBudgetReport = async (budgets, categories, dateRange) => {
 
       doc.setFontSize(10);
       const overviewData = [
+<<<<<<< HEAD
         ['Total Budget', `₱${totalBudget.toFixed(2)}`],
         ['Total Spent', `₱${totalSpent.toFixed(2)}`],
         ['Remaining', `₱${(totalBudget - totalSpent).toFixed(2)}`],
+=======
+        ['Total Budget', `$${totalBudget.toFixed(2)}`],
+        ['Total Spent', `$${totalSpent.toFixed(2)}`],
+        ['Remaining', `$${(totalBudget - totalSpent).toFixed(2)}`],
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
         ['Overall Usage', `${overallUsage.toFixed(1)}%`]
       ];
 
@@ -388,9 +415,15 @@ const generateBudgetReport = async (budgets, categories, dateRange) => {
         const categoryName = getCategoryName(budget);
         
         doc.text(categoryName.substring(0, 20), 22, yPosition);
+<<<<<<< HEAD
         doc.text(`₱${limit.toFixed(2)}`, 80, yPosition);
         doc.text(`₱${spent.toFixed(2)}`, 110, yPosition);
         doc.text(`₱${remaining.toFixed(2)}`, 130, yPosition);
+=======
+        doc.text(`$${limit.toFixed(2)}`, 80, yPosition);
+        doc.text(`$${spent.toFixed(2)}`, 110, yPosition);
+        doc.text(`$${remaining.toFixed(2)}`, 130, yPosition);
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
         doc.text(`${percentage.toFixed(1)}%`, 160, yPosition);
         
         // Color code status
@@ -826,7 +859,11 @@ export const ReportsPage = () => {
                 <div>
                   <p className="text-sm text-muted-foreground">Total Income</p>
                   <p className="text-lg font-semibold text-green-600">
+<<<<<<< HEAD
                     ₱{reportData.totals.income.toLocaleString()}
+=======
+                    ${reportData.totals.income.toLocaleString()}
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
                   </p>
                 </div>
               </div>
@@ -840,7 +877,11 @@ export const ReportsPage = () => {
                 <div>
                   <p className="text-sm text-muted-foreground">Total Expenses</p>
                   <p className="text-lg font-semibold text-red-600">
+<<<<<<< HEAD
                     ₱{reportData.totals.expenses.toLocaleString()}
+=======
+                    ${reportData.totals.expenses.toLocaleString()}
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
                   </p>
                 </div>
               </div>
@@ -854,7 +895,11 @@ export const ReportsPage = () => {
                 <div>
                   <p className="text-sm text-muted-foreground">Net Balance</p>
                   <p className="text-lg font-semibold text-blue-600">
+<<<<<<< HEAD
                     ₱{reportData.totals.netBalance.toLocaleString()}
+=======
+                    ${reportData.totals.netBalance.toLocaleString()}
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
                   </p>
                 </div>
               </div>
@@ -922,19 +967,31 @@ export const ReportsPage = () => {
                     <div className="flex justify-between items-center">
                       <span>Income</span>
                       <span className="font-semibold text-green-600">
+<<<<<<< HEAD
                         ₱{reportData.totals.income.toLocaleString()}
+=======
+                        ${reportData.totals.income.toLocaleString()}
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span>Expenses</span>
                       <span className="font-semibold text-red-600">
+<<<<<<< HEAD
                         ₱{reportData.totals.expenses.toLocaleString()}
+=======
+                        ${reportData.totals.expenses.toLocaleString()}
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
                       </span>
                     </div>
                     <div className="flex justify-between items-center pt-2 border-t">
                       <span className="font-semibold">Net</span>
                       <span className="font-semibold">
+<<<<<<< HEAD
                         ₱{reportData.totals.netBalance.toLocaleString()}
+=======
+                        ${reportData.totals.netBalance.toLocaleString()}
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
                       </span>
                     </div>
                   </div>
@@ -991,7 +1048,11 @@ export const ReportsPage = () => {
                       <div className="flex justify-between items-center">
                         <span className="font-medium">{item.category}</span>
                         <div className="text-right">
+<<<<<<< HEAD
                           <div className="font-semibold">₱{item.amount.toFixed(2)}</div>
+=======
+                          <div className="font-semibold">${item.amount.toFixed(2)}</div>
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
                           <div className="text-sm text-muted-foreground">
                             {item.percentage.toFixed(1)}%
                           </div>
@@ -1026,7 +1087,11 @@ export const ReportsPage = () => {
                         </div>
                         <div className="text-right">
                           <div className="font-semibold">
+<<<<<<< HEAD
                             ₱{getBudgetSpent(budget).toFixed(2)} / ₱{getBudgetLimit(budget).toFixed(2)}
+=======
+                            ${getBudgetSpent(budget).toFixed(2)} / ${getBudgetLimit(budget).toFixed(2)}
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
                           </div>
                           <div className="text-sm text-muted-foreground">
                             {getBudgetPercentage(budget).toFixed(1)}% used

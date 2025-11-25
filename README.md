@@ -1,5 +1,6 @@
 
   # frontend
+<<<<<<< HEAD
 
   This is a code bundle for frontend. The original project is available at https://www.figma.com/design/MqeCmCUSFoNE3zYXXye2wg/frontend.
 
@@ -9,3 +10,9 @@
 
   Run `npm run dev` to start the development server.
   
+=======
+  Run `npm i` to install the dependencies.
+
+  Run `npm run dev` to start the development server.
+  
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96

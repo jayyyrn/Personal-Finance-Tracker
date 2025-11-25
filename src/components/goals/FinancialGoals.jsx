@@ -148,6 +148,7 @@ export const FinancialGoals = () => {
 
   const formatCurrency = (amount) => {
     try {
+<<<<<<< HEAD
       if (!amount && amount !== 0) return '₱0.00';
       return `₱${parseFloat(amount).toLocaleString('en-US', {
         minimumFractionDigits: 2,
@@ -156,6 +157,16 @@ export const FinancialGoals = () => {
     } catch (error) {
       console.error('Error formatting currency:', error);
       return '₱0.00';
+=======
+      if (!amount && amount !== 0) return '$0.00';
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+      }).format(amount);
+    } catch (error) {
+      console.error('Error formatting currency:', error);
+      return '$0.00';
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
     }
   };
 
@@ -444,7 +455,11 @@ export const FinancialGoals = () => {
               <div className="space-y-2">
                 <Label htmlFor="target-amount">Target Amount *</Label>
                 <div className="relative">
+<<<<<<< HEAD
                   <span className="absolute left-3 top-3 text-muted-foreground">₱</span>
+=======
+                  <span className="absolute left-3 top-3 text-muted-foreground">$</span>
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
                   <Input
                     id="target-amount"
                     type="number"
@@ -468,7 +483,11 @@ export const FinancialGoals = () => {
               <div className="space-y-2">
                 <Label htmlFor="current-amount">Current Amount</Label>
                 <div className="relative">
+<<<<<<< HEAD
                   <span className="absolute left-3 top-3 text-muted-foreground">₱</span>
+=======
+                  <span className="absolute left-3 top-3 text-muted-foreground">$</span>
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
                   <Input
                     id="current-amount"
                     type="number"

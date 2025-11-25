@@ -22,7 +22,11 @@ export function BudgetTracker({
   const [newBudgetLimit, setNewBudgetLimit] = useState('');
   const [editingBudget, setEditingBudget] = useState(null);
   const [editLimit, setEditLimit] = useState('');
+<<<<<<< HEAD
   const [budgetType, setBudgetType] = useState('expense');
+=======
+  const [budgetType, setBudgetType] = useState('expense'); // Add this state
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
 
   const { execute: addBudget, loading: addingBudget } = useAsyncAction();
   const { execute: updateBudget, loading: updatingBudget } = useAsyncAction();
@@ -71,8 +75,13 @@ export function BudgetTracker({
   };
 
   const formatAmount = (amount) => {
+<<<<<<< HEAD
     if (!amount) return '₱0.00';
     return `₱${parseFloat(amount).toLocaleString()}`;
+=======
+    if (!amount) return '$0.00';
+    return `$${parseFloat(amount).toLocaleString()}`;
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
   };
 
   // Safe access to budget properties
@@ -240,7 +249,11 @@ export function BudgetTracker({
             <CardContent className="p-6">
               <h3 className="text-lg font-semibold mb-4">Create Budget</h3>
               
+<<<<<<< HEAD
               {/* Budget Type Toggle */}
+=======
+              {/* Budget Type Toggle - FIXED */}
+>>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
               <div className="grid grid-cols-2 gap-2 mb-4">
                 <Button 
                   variant={budgetType === 'expense' ? "default" : "outline"}
