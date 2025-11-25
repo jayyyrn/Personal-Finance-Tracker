@@ -1,8 +1,5 @@
 
   # frontend
-<<<<<<< HEAD
-
-  This is a code bundle for frontend. The original project is available at https://www.figma.com/design/MqeCmCUSFoNE3zYXXye2wg/frontend.
 
   ## Running the code
 
