@@ -65,11 +65,7 @@ export function SpendingChart({ categories }) {
           <p className="font-medium">{label}</p>
           {payload.map((entry, index) => (
             <p key={index} style={{ color: entry.color }}>
-<<<<<<< HEAD
               {entry.dataKey}: ₱{entry.value?.toFixed(2)}
-=======
-              {entry.dataKey}: ${entry.value?.toFixed(2)}
->>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
             </p>
           ))}
         </div>
@@ -85,11 +81,7 @@ export function SpendingChart({ categories }) {
         <div className="bg-card border rounded-lg p-3 shadow-lg">
           <p className="font-medium">{data.name}</p>
           <p style={{ color: data.color }}>
-<<<<<<< HEAD
             Amount: ₱{data.value?.toFixed(2)}
-=======
-            Amount: ${data.value?.toFixed(2)}
->>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
           </p>
           <p className="text-sm text-muted-foreground">
             {data.count} transaction{data.count !== 1 ? 's' : ''}
@@ -151,11 +143,7 @@ export function SpendingChart({ categories }) {
                     />
                     <span>{entry.name}</span>
                   </div>
-<<<<<<< HEAD
                   <span className="font-medium">₱{entry.value.toFixed(2)}</span>
-=======
-                  <span className="font-medium">${entry.value.toFixed(2)}</span>
->>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
                 </div>
               ))}
             </div>

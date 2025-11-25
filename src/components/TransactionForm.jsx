@@ -6,16 +6,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Textarea } from "./ui/textarea";
 import { Category } from "../types/api";
-<<<<<<< HEAD
 import { useAsyncAction } from "../hooks/useApi";
 import { LoadingSpinner } from "./LoadingSpinner";
 import { Plus } from "lucide-react";
-=======
-// Remove this line: import { CreateTransactionData } from "../services/transactionService";
-import { useAsyncAction } from "../hooks/useApi";
-import { LoadingSpinner } from "./LoadingSpinner";
-import { Plus, DollarSign } from "lucide-react";
->>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
 import { toast } from "sonner";
 
 export function TransactionForm({ categories, onTransactionAdded, onAddTransaction }) {
@@ -82,11 +75,7 @@ export function TransactionForm({ categories, onTransactionAdded, onAddTransacti
               variant={type === 'expense' ? 'default' : 'outline'}
               onClick={() => {
                 setType('expense');
-<<<<<<< HEAD
                 setCategoryId('');
-=======
-                setCategoryId(''); // Reset category when type changes
->>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
               }}
               className={`h-10 ${type === 'expense' ? 'bg-red-600 hover:bg-red-700' : 'border-red-200 text-red-600 hover:bg-red-50'}`}
             >
@@ -97,11 +86,7 @@ export function TransactionForm({ categories, onTransactionAdded, onAddTransacti
               variant={type === 'income' ? 'default' : 'outline'}
               onClick={() => {
                 setType('income');
-<<<<<<< HEAD
                 setCategoryId('');
-=======
-                setCategoryId(''); // Reset category when type changes
->>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
               }}
               className={`h-10 ${type === 'income' ? 'bg-green-600 hover:bg-green-700' : 'border-green-200 text-green-600 hover:bg-green-50'}`}
             >
@@ -113,11 +98,7 @@ export function TransactionForm({ categories, onTransactionAdded, onAddTransacti
           <div className="space-y-2">
             <Label htmlFor="amount">Amount *</Label>
             <div className="relative">
-<<<<<<< HEAD
               <span className="absolute left-3 top-3 h-4 w-4 text-muted-foreground">₱</span>
-=======
-              <DollarSign className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
->>>>>>> d56f293ff91bb66bb44c0cdac2a7bc01ed81fe96
               <Input
                 id="amount"
                 type="number"
